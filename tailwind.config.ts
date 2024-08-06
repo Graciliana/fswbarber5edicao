@@ -15,6 +15,22 @@ const config: Config = {
       },
     },
   },
+  colors: {
+    'dark-purple': '#221C3D',
+    'primary-purple': '#8162FF',
+    'background-black': '#141518',
+    'secondary-black': '#1A1B1F',
+    'gray-01': '#26272B',
+    'gray-02': '#4E525B',
+    'gray-03': '#838896',
+    'white': '#FFFFFF',
+    'red':'#EF4444',
+    'dark-red':'#2F1F1F',
+  },
+  fontFamily: {
+    nunito: ['Nunito', 'sans-serif'],
+  },
+  
   plugins: [],
 };
 export default config;
