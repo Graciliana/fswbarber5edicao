@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="bg-black" lang="en">
       <body className={nunito.className}>{children}</body>
     </html>
   );
