@@ -27,7 +27,7 @@ async function seedDatabase() {
       "https://utfs.io/f/07842cfb-7b30-4fdc-accc-719618dfa1f2-17s.png",
       "https://utfs.io/f/0522fdaf-0357-4213-8f52-1d83c3dcb6cd-18e.png",
     ];
-    // Nomes criativos para as barbearias
+    
     const creativeNames = [
       "Barbearia Vintage",
       "Corte & Estilo",
@@ -41,7 +41,6 @@ async function seedDatabase() {
       "Estilo Clássico",
     ];
 
-    // Endereços fictícios para as barbearias
     const addresses = [
       "Rua da Barbearia, 123",
       "Avenida dos Cortes, 456",
@@ -90,11 +89,10 @@ async function seedDatabase() {
         name: "Hidratação",
         description: "Hidratação profunda para cabelo e barba.",
         price: 25.0,
-        imageUrl: "Fios hidratados, macios e brilhantes.",
+        imageUrl: "https://utfs.io/f/5c89f046-80cd-4443-89df-211de62b7c2a-17p.png",
       },
     ];
 
-    // Criar 10 barbearias com nomes e endereços fictícios
     const barbershops = [];
     for (let i = 0; i < 10; i++) {
       const name = creativeNames[i];
@@ -105,7 +103,7 @@ async function seedDatabase() {
         data: {
           name,
           address,
-          imageUrl: imageUrl,
+          imageUrl,
         },
       });
 
@@ -115,6 +113,7 @@ async function seedDatabase() {
             name: service.name,
             description: service.description,
             price: service.price,
+            imageUrl: service.imageUrl,
             barbershop: {
               connect: {
                 id: barbershop.id,
@@ -127,10 +126,11 @@ async function seedDatabase() {
       barbershops.push(barbershop);
     }
 
-    // Fechar a conexão com o banco de dados
     await prisma.$disconnect();
   } catch (error) {
     console.error("Erro ao criar as barbearias:", error);
+    await prisma.$disconnect();
+    process.exit(1);
   }
 }
 
