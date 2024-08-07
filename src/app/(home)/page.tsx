@@ -2,6 +2,8 @@ import { Header } from "../../_components/header";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import Search from "./_components/search";
+import Categories from "./_components/categories";
+import Banner from "./_components/banner";
 
 export default function Home() {
   return (
@@ -34,7 +36,19 @@ export default function Home() {
       </div>
      <div className="mb-6">
       <Search />
-     </div>
+      </div>
+      <div className="mt-6">
+        <Categories />
+      </div>
+      <div className="mt-6 px-5">
+        <Banner />
+      </div>
+      <div className="mt-6 px-5">
+        <h2 className="uppercase text-xs font-bold text-gray-03">Agendamentos</h2>
+      </div>
+      <div className="mt-6 px-5">
+        <h2 className="uppercase text-xs font-bold text-gray-03">Agendamentos</h2>
+      </div>
     </div>
     
   );
