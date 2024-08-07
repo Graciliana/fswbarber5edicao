@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import {Nunito} from "next/font/google";
 import "./globals.css";
-import Footer from "@/_components/footer";
+import Footer from "@/app/_components/footer";
 
 
 const nunito = Nunito({ subsets: ["latin"] });

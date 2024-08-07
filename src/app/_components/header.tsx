@@ -1,9 +1,8 @@
-import { Button } from './ui/button';
+
 import Image from 'next/image';
 import * as React from 'react';
 import { TiThMenu } from "react-icons/ti";
-
-
+import { Button } from './ui/button';
 export function Header() {
   return (
     <div className="h-22 py-6 px-5 flex flex-row border-b border-gray-01 items-center justify-between">

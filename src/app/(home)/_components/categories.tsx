@@ -1,5 +1,5 @@
 
-import { Button } from '@/_components/ui/button';
+import { Button } from '@/app/_components/ui/button';
 import * as React from 'react';
 import { FaScissors } from 'react-icons/fa6';
 
