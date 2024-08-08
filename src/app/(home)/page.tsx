@@ -6,8 +6,18 @@ import Categories from "./_components/categories";
 import Banner from "./_components/banner";
 import Schedules from "@/app/_components/schedules";
 import { Header } from "../_components/header";
+import { db } from "../_lib/prisma";
+import BarbershopItem from "../_components/barbershop-item";
 
-export default function Home() {
+export default async function Home() {
+  //chamar prisma e pegar barbearias
+  const barbershops = await db.barbershop.findMany({})
+  //chamar prisma e pegar agendamentos
+  const popularesBarbershops = await db.barbershop.findMany({
+  orderBy: {
+    name: "desc",
+  },
+})
   return (
     <div className="min-w-96 max-[1440px]">
       <Header />
@@ -51,10 +61,23 @@ export default function Home() {
       </div>
       <div className="mt-6 px-5">
         <h2 className="uppercase text-xs font-bold text-gray-03">Recomendados</h2>
+        <div className="flex gap-4 pt-6 overflow-auto [&::-webkit-scrollbar]:hidden">
+ {barbershops.map((barbershop) => (
+            <BarbershopItem key={barbershop.id} barbershop={barbershop}/>
+          ))}
+        </div>
+         
         
       </div>
-      <div className="mt-6 px-5">
+       <div className="py-6 px-5">
         <h2 className="uppercase text-xs font-bold text-gray-03">Populares</h2>
+        <div className="flex gap-4 pt-6 overflow-auto [&::-webkit-scrollbar]:hidden">
+ {popularesBarbershops.map((barbershop) => (
+            <BarbershopItem key={barbershop.id} barbershop={barbershop}/>
+          ))}
+        </div>
+         
+        
       </div>
     </div>
     
