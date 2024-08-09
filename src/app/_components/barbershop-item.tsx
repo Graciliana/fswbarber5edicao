@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { FaStar } from "react-icons/fa";
+import Link from "next/link";
 
 interface BarbershopItemProps {
   barbershop: Barbershop;
@@ -41,7 +42,9 @@ export default function BarbershopItem({ barbershop }: BarbershopItemProps) {
             variant="secondary"
             className="mt-3 w-full bg-gray-02 px-2 font-bold text-white"
           >
+            <Link href={`/barbershops/${barbershop.id}`}>
             Reservar
+            </Link>           
           </Button>
         </div>
       </CardContent>
