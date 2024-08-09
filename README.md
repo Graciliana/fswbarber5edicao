@@ -16,3 +16,5 @@ Rápida descrição do objetivo de fazer esse projeto
 ## Detalhes do projeto
 
 Textos e imagens que descrevam seu projeto, suas conquistas, seus desafios, próximos passos, etc...
+
+https://skills.yourlearning.ibm.com/certificate/share/111a29db4aewogICJvYmplY3RUeXBlIiA6ICJBQ1RJVklUWSIsCiAgImxlYXJuZXJDTlVNIiA6ICIxNzI1MDMyUkVHIiwKICAib2JqZWN0SWQiIDogIlVSTC03QzJGNUQzNTEyOUUiCn069c6f380f4-10
